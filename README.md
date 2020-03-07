@@ -2,7 +2,7 @@
 ## 1.Experiment Overview: Free Trial Screener
 Thanks to Udacity to offer such a great free online course about A/B Testing, which provided me the opportunity to get hands-on experience in practicing real-world A/B testing. This experiment is the final project of the course.
 
-The experiment was run by Udacity to test the impact of adding a step to distinguish users by the time that they have time to devote to the course (more or less than 5hrs) before processing to checkout for free trial. In this way, the proportion of students who have a greater tendency to complete the course will be larger in the students who enrolled in the paid version of course. The business goal of the experiment is to maximize course completion and to most efficiently use limited coaching resources. 
+The experiment was run by Udacity to test the impact of adding a step to distinguish users by the time that they have to devote to the course (more or less than 5hrs) before processing to checkout for free trial. In this way, the proportion of students who have a greater tendency to complete the course will be larger in the students who enrolled in the paid version of course. The business goal of the experiment is to maximize course completion and to most efficiently use limited coaching resources. 
 
 ### 1.1 Current Condition
 At the time of this experiment, Udacity courses currently have two options on the page of course overview page: “Start Free Trial”, and “Access Course Materials”.
@@ -12,7 +12,7 @@ If the student clicks "Start Free Trial", they will be asked to enter their cred
 If the student clicks "Access Course Materials", they will be able to view the videos and take the quizzes for free, but they will not receive coaching support or a verified certificate, and they will not submit their final project for feedback.
 
 ### 1.2 Condition After Change
-In the experiment, Udacity tested a change where if the student clicked "start free trial", they were asked how much time they had available to devote to the course.
+In the experiment, Udacity tested a change where if the student clicked "start free trial", they were asked how much time they had available to devote to the course. This [screenshot](https://drive.google.com/file/d/0ByAfiG8HpNUMakVrS0s4cGN2TjQ/view) shows what the experiment looks like. 
 
 If the student indicated 5 or more hours per week, they would be taken through the checkout process as usual.
 
