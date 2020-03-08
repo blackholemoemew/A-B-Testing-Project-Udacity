@@ -194,5 +194,11 @@ For each evaluation metrics, use the day-by-day data to calculate the gross conv
 
 The conclusion from sign tests aligns with our parametric hypothesis test.
 
-## 4.	Recommendation
-The business goal of the experiment is to increase user experience by targeting more engaged students and providing them higher quality coaching resources. The condition to launch the experiment is that the null hypothesis is rejected for **all** evaluation metrics and that **all** the difference is practically significant. Now that we only see a statistically and practically significant decrease in Gross Conversion, not in Net Conversion, I recommend **not** to launch the experiment.
+## 4.	Conclusion & Recommendation
+The business goal of the experiment is to increase user experience by targeting more engaged students and providing them higher quality coaching resources. The perfect condition to launch the new feature is that the null hypothesis is rejected for **all** evaluation metrics and that **all** the difference is practically significant. From the analysis above, I came with two conclusions:
+
+1) The decrease in **Gross Conversion** is both statistically and practically significant, which means the change could help improve the utilization of coaching resources during the free trial period.
+
+2) No statistically and practically significant difference seen in **Net Conversion**. In my opinion, with or without the change, the users that remain enrolled after 14 days free trial are always (more probable) those students that have more time to devote to the courses. Although the net conversion did decrease due to the change, it may be a random decrease and can't be statistically convincing. That is, the results can't provide sufficient power to bring the ultimate business impact as we expect.
+
+My recommendation is **not** to launch the new feature.
