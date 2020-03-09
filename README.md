@@ -202,3 +202,26 @@ The business goal of the experiment is to increase user experience by targeting 
 2) No statistically and practically significant difference seen in **Net Conversion**. In my opinion, with or without the change, the users that remain enrolled after 14 days free trial are always (more probable) those students that have more time to devote to the courses. Although the net conversion did decrease due to the change, it may be a random decrease and can't be statistically convincing. That is, the results can't provide sufficient power to bring the ultimate business impact as we expect.
 
 My recommendation is **not** to launch the new feature.
+
+## 5.	Follow-Up Experiment: How to Reduce Early Cancellations
+Since Udacity ran the original experiment several years ago, maybe 3 or 4 years, and the current course overview page has been improved a lot, I’ll try to make my thoughts about the follow-up experiment valuable even for now. Let’s think about why users want to cancel the enrollment early? Even though so much information has been provided before enrollment? From my perspective, there may be two reasons:
+
+1)	The students feel the course is too hard to complete or the course contents don’t meet their expectations.
+
+2)	The users think the service of the paid version doesn’t worth the money.
+
+To reduce early cancellations, I think these changes may be helpful:
+
+1)	For reason one: After the student click “cancel enrollment”, ask the student “Feel the course inappropriate for you? You can switch your current enrollment to other courses recommend for you.” (or other sentences with the same meaning, just an example here). The students have two selections here, “confirm to cancel” or “switch to other courses”. If they switch to other courses, they keep enrolled. I’ll give more description about this point later.
+
+2)	For reason two: this may need a lot of work to improve the experience, e.g. real-time Q&A, easier access to create a study group, and other services the students want to have. Although we could add the information about the new features on the course page, it’s unreasonable to test it by offering some users a new service while some don’t. I’m still working on how to experiment with such change.
+
+A brief experiment design about change one:
+
+**Null Hypothesis:** The users that remain enrolled after free trial will not change (increase) if they have the selection to switch the enrollment to other courses.
+
+**Invariant Metrics:** User-ids enrolled in a free trial -> Cookies click on “start free trial” -> Cookies of course overview page visits
+
+**Evaluation Metrics:** Net Conversion, Retention. Both of the metrics can measure the impact of the change on number of users remained enrolled after free trial. But I’ll go with retention to keep the unit of diversion and unit of analysis consistent.
+
+**Unit of Diversion:** User-ids. The change only applies to users enrolled in a free trial, which means each user has created an account. It’s a good way to define an individual in the experiment.
