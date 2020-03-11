@@ -1,4 +1,34 @@
 # A-B-Testing-Project-Udacity
+
+* [1.Experiment Overview: Free Trial Screener](#1experiment-overview-free-trial-screener)
+   - [1.1 Current Condition](#11-current-condition)
+     - [1.2 Condition After Change](#12-condition-after-change)
+* [2.Experiment Hypothesis](#2experiment-hypothesis)
+* [3.Experiment Design](#3experiment-design)
+   - [3.1	Explaining on the funnel](#31explaining-on-the-funnel)
+   - [3.2 Unit of Diversion](#32-unit-of-diversion)
+   - [3.3 Metric Choice](#33-metric-choice)
+     - [3.3.1 Invariant Metrics](#331-invariant-metrics)
+     - [3.3.2 Evaluation Metrics](#332-evaluation-metrics)
+     - [3.3.3 Unselected Metrics](#333-unselected-metrics)
+     - [3.3.4 Baseline Values for These Metrics](#334-baseline-values-for-these-metrics)
+   - [3.4 Measuring Standard Deviation](#34-measuring-standard-deviation)
+     - [3.4.1 Analytical Estimates or Empirical Estimates?](#341-analytical-estimates-or-empirical-estimates)
+   - [3.5 Sizing](#35-sizing)
+     - [3.5.1 Number of Samples vs. Power](#351-number-of-samples-vs-power)
+     - [3.5.2 Duration vs. Exposure](#352-duration-vs-exposure)
+* [4.Experiment Analysis](#4experiment-analysis)
+   - [4.1 A/A Testing – Sanity Checks](#41-aa-testing--sanity-checks)
+     - [4.1.1 Number of cookies](#411-number-of-cookies)
+     - [4.1.2 Number of clicks](#412-number-of-clicks)
+     - [4.1.3 Click-through-probability](#413-click-through-probability)
+     - [4.1.4 Sanity Checks Results](#414-sanity-checks-results)
+   - [4.2Result Analysis](#42result-analysis)
+     - [4.2.1 Effect Size Tests](#421-effect-size-tests)
+     - [4.2.2 Sign Tests – Cross Checking](#422-sign-tests--cross-checking)
+* [5.Conclusion & Recommendation](#5conclusion--recommendation)
+* [6.Follow-Up Experiment: How to Reduce Early Cancellations](#6follow-up-experiment-how-to-reduce-early-cancellations)
+
 ## 1.Experiment Overview: Free Trial Screener
 Thanks to Udacity to offer such a great free online course about A/B Testing, which provided me the opportunity to get hands-on experience in practicing real-world A/B testing. This experiment is the final project of the course.
 
@@ -18,12 +48,12 @@ If the student indicated 5 or more hours per week, they would be taken through t
 
 If they indicated fewer than 5 hours per week, a message would appear indicating that Udacity courses usually require a greater time commitment for successful completion, and suggesting that the student might like to access the course materials for free. At this point, the student would have the option to continue enrolling in the free trial, or access the course materials for free instead. This screenshot shows what the experiment looks like.
 
-## 2.	Experiment Hypothesis
+## 2.Experiment Hypothesis
 The hypothesis was that this change might set clearer expectations for students upfront, thus reducing the number of frustrated students who left the free trial because they didn't have enough time—without significantly reducing the number of students to continue past the free trial and eventually complete the course. If this hypothesis held true, Udacity could improve the overall student experience and improve coaches' capacity to support students who are likely to complete the course.
 
 Null hypothesis: the change causes no significant difference to the number of students that past the free trial and eventually complete the course.
 
-## 3.	Experiment Design
+## 3.Experiment Design
 ### 3.1	Explaining on the [funnel](https://drive.google.com/file/d/1xxuEJBjKOlU24Cez000Z0n8VpTtiyvDF/view?usp=sharing)
 -	Course overview page visits: unique cookies
 
@@ -39,6 +69,7 @@ Null hypothesis: the change causes no significant difference to the number of st
 
 ### 3.2 Unit of Diversion
 The unit of diversion is how we define what an individual subject is in the experiment. In this case, the unit of diversion is a cookie, although if the student enrolls in the free trial, they are tracked by user-id from that point forward. The same user-id cannot enroll in the free trial twice. For users that do not enroll, their user-id is not tracked in the experiment, even if they were signed in when they visited the course overview page.
+
 ### 3.3 Metric Choice
 Since it’s the first time to try the change, it’s better to run an A/A test simultaneously to help us debug the experiment setup. So, we need two kinds of metrics here. The first kind is invariant metrics and used for A/A testing. They are expected to have a similar distribution in both control and experiment groups. Another kind is evaluation metrics. We expect to see a change in evaluation metrics and set a minimum difference (Dmin), that is, the difference that would have to be observed before that was a meaningful change for the business for each metric. We can see from the funnel that some metrics keep unchanged and some metrics are expected to change after the new method. It’s easy to pick the metrics from the funnel.
 
@@ -74,6 +105,7 @@ The rough estimates of the baseline values for metrics provided by Udacity are l
 | Gross conversion |Probability of enrolling, given click	| 0.20625 |
 | Retention	| Probability of payment, given enroll | 0.53 |
 | Net conversion | Probability of payment, given click | 0.1093125 |
+
 ### 3.4 Measuring Standard Deviation
 #### 3.4.1 Analytical Estimates or Empirical Estimates?
 For each evaluation metric, we need to estimate its standard deviation analytically. The project instruction gives us a sample size of 5,000 cookies visiting the course overview pages to calculate the analytical standard deviation. 
@@ -122,6 +154,7 @@ For the left two metrics, 685,325 is the sample size, and the experiment would t
 ## 4.Experiment Analysis
 ### 4.1 A/A Testing – Sanity Checks
 As we mentioned before, since it is our first time to run the experiment, we need to run an A/A testing to check our experiment is set up correctly and is going on as we expected. Only if all the sanity checks pass, we can start analyzing the experiment. If sanity checks fail, we need to go back to discuss with our team members to find out why.
+
 #### 4.1.1 Number of cookies
 This metric is a simple count metric. We expect the metric not to change because of the experiment, that is, there is no significant difference between the outcomes from the control and experiment group.
 
@@ -166,6 +199,7 @@ The difference is **-0.0001**. The 95% confidence interval is **[-0.0013, 0.0013
 
 ### 4.2Result Analysis
 Before analyzing the experiment results, let’s take a look at the data and check the data integrity. We notice that only 23 days out of the 37 days have complete information for enrollments and payments. So, the first thing to do is removing the null value from the data frame.
+
 #### 4.2.1 Effect Size Tests
 For each evaluation metrics, give a 95% confidence interval around the difference between the experiment and control groups. Because gross conversion and net conversion are both probability metrics, the method we will use is the same as what we used for the probability metric in sanity checks. The only difference is that we expect the difference is significant here.
 
@@ -194,7 +228,7 @@ For each evaluation metrics, use the day-by-day data to calculate the gross conv
 
 The conclusion from sign tests aligns with our parametric hypothesis test.
 
-## 4.	Conclusion & Recommendation
+## 5.Conclusion & Recommendation
 The business goal of the experiment is to increase user experience by targeting more engaged students and providing them higher quality coaching resources. The perfect condition to launch the new feature is that the null hypothesis is rejected for **all** evaluation metrics and that **all** the difference is practically significant. From the analysis above, I came with two conclusions:
 
 1) The decrease in **Gross Conversion** is both statistically and practically significant, which means the change could help improve the utilization of coaching resources during the free trial period.
@@ -203,7 +237,7 @@ The business goal of the experiment is to increase user experience by targeting 
 
 My recommendation is **not** to launch the new feature.
 
-## 5.	Follow-Up Experiment: How to Reduce Early Cancellations
+## 6.Follow-Up Experiment: How to Reduce Early Cancellations
 Since Udacity ran the original experiment several years ago, maybe 3 or 4 years, and the current course overview page has been improved a lot, I’ll try to make my thoughts about the follow-up experiment valuable even for now. Let’s think about why users want to cancel the enrollment early? Even though so much information has been provided before enrollment? From my perspective, there may be two reasons:
 
 1)	The students feel the course is too hard to complete or the course contents don’t meet their expectations.
