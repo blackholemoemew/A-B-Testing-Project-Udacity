@@ -2,7 +2,7 @@
 
 * [1.Experiment Overview: Free Trial Screener](#1experiment-overview-free-trial-screener)
    - [1.1 Current Condition](#11-current-condition)
-     - [1.2 Condition After Change](#12-condition-after-change)
+   - [1.2 Condition After Change](#12-condition-after-change)
 * [2.Experiment Hypothesis](#2experiment-hypothesis)
 * [3.Experiment Design](#3experiment-design)
    - [3.1	Explaining on the funnel](#31explaining-on-the-funnel)
@@ -23,7 +23,7 @@
      - [4.1.2 Number of clicks](#412-number-of-clicks)
      - [4.1.3 Click-through-probability](#413-click-through-probability)
      - [4.1.4 Sanity Checks Results](#414-sanity-checks-results)
-   - [4.2Result Analysis](#42result-analysis)
+   - [4.2 Result Analysis](#42result-analysis)
      - [4.2.1 Effect Size Tests](#421-effect-size-tests)
      - [4.2.2 Sign Tests – Cross Checking](#422-sign-tests--cross-checking)
 * [5.Conclusion & Recommendation](#5conclusion--recommendation)
@@ -197,7 +197,7 @@ The difference is **-0.0001**. The 95% confidence interval is **[-0.0013, 0.0013
 | Number of clicks | (Experiment Counts) / (Total Counts)	| 0.4995 | 0.5 | 0.4959	| 0.5041 | Pass |
 | CTP	| Experiment CTP – Control CTP | -0.0001 | 0 | -0.0013 | 0.0013	| Pass |
 
-### 4.2Result Analysis
+### 4.2 Result Analysis
 Before analyzing the experiment results, let’s take a look at the data and check the data integrity. We notice that only 23 days out of the 37 days have complete information for enrollments and payments. So, the first thing to do is removing the null value from the data frame.
 
 #### 4.2.1 Effect Size Tests
